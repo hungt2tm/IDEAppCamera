@@ -15,6 +15,7 @@
 		9618D0DC2049E36E003F9013 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9618D0DB2049E36E003F9013 /* Product.swift */; };
 		9618D0DE2049E7F9003F9013 /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9618D0DD2049E7F9003F9013 /* AddProductViewController.swift */; };
 		9618D0E02049E8E2003F9013 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9618D0DF2049E8E2003F9013 /* ProductTableViewCell.swift */; };
+		96E58F67204AEE5000F967CE /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E58F66204AEE4F00F967CE /* ProductListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		9618D0DB2049E36E003F9013 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		9618D0DD2049E7F9003F9013 /* AddProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
 		9618D0DF2049E8E2003F9013 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
+		96E58F66204AEE4F00F967CE /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,12 +64,13 @@
 			children = (
 				9618D0C92049E354003F9013 /* AppDelegate.swift */,
 				9618D0CB2049E354003F9013 /* ViewController.swift */,
+				96E58F66204AEE4F00F967CE /* ProductListViewController.swift */,
+				9618D0DD2049E7F9003F9013 /* AddProductViewController.swift */,
 				9618D0CD2049E354003F9013 /* Main.storyboard */,
 				9618D0D02049E354003F9013 /* Assets.xcassets */,
 				9618D0D22049E354003F9013 /* LaunchScreen.storyboard */,
 				9618D0D52049E354003F9013 /* Info.plist */,
 				9618D0DB2049E36E003F9013 /* Product.swift */,
-				9618D0DD2049E7F9003F9013 /* AddProductViewController.swift */,
 				9618D0DF2049E8E2003F9013 /* ProductTableViewCell.swift */,
 			);
 			path = AppCamera;
@@ -149,6 +152,7 @@
 				9618D0CA2049E354003F9013 /* AppDelegate.swift in Sources */,
 				9618D0E02049E8E2003F9013 /* ProductTableViewCell.swift in Sources */,
 				9618D0DE2049E7F9003F9013 /* AddProductViewController.swift in Sources */,
+				96E58F67204AEE5000F967CE /* ProductListViewController.swift in Sources */,
 				9618D0DC2049E36E003F9013 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

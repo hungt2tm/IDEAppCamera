@@ -8,8 +8,10 @@
 
 import UIKit
 
-protocol AddProductDelegate: class {
-    func handledProduct(type: String, product: Product)
+protocol AddProductViewControllerDelegate: class {
+//    func handledProduct(type: String, product: Product)
+    func addNewProduct(product: Product)
+    func updateProduct(product: Product)
 }
 
 class AddProductViewController: UIViewController {
@@ -21,25 +23,29 @@ class AddProductViewController: UIViewController {
     @IBOutlet weak var productNameTextField: UITextField!
     @IBOutlet weak var button: UIButton!
     
-    weak var delegate: AddProductDelegate?
+    weak var delegate: AddProductViewControllerDelegate?
     var imagePicker: UIImagePickerController?
     var product: Product?
-    var isFirstLoad = false
+    var isFirstLoad = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handledImagePicker(_:)))
         self.imageView.addGestureRecognizer(tapGesture)
+        if !isFirstLoad { return }
+        isFirstLoad = false
         
-        if !isFirstLoad {
-            if let product = self.product {
-                self.imageView.image = product.image
-                self.productPriceTextField.text = product.price
-                self.productNameTextField.text = product.name
-                self.button.setTitle("Update", for: .normal)
-            }
+        if let product = self.product {
+            self.imageView.image = product.image
+            self.productPriceTextField.text = product.price
+            self.productNameTextField.text = product.name
+            self.button.setTitle("Update", for: .normal)
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,15 +63,25 @@ class AddProductViewController: UIViewController {
         if name == "" || price == "" {
             return
         }
-        
+        // Method 1: Handle in one function
+//        if var product = self.product {
+//            product.name = name
+//            product.price = price
+//            product.image = photo
+//            self.delegate?.handledProduct(type: "update", product: product)
+//        } else {
+//            let product = Product(id: "", name: name, price: price, image: photo)
+//            self.delegate?.handledProduct(type: "add", product: product)
+//        }
+        // Method 2: Split to two functions
         if var product = self.product {
             product.name = name
             product.price = price
             product.image = photo
-            self.delegate?.handledProduct(type: "update", product: product)
+            self.delegate?.updateProduct(product: product)
         } else {
             let product = Product(id: "", name: name, price: price, image: photo)
-            self.delegate?.handledProduct(type: "add", product: product)
+            self.delegate?.addNewProduct(product: product)
         }
         
         self.navigationController?.popViewController(animated: true)
